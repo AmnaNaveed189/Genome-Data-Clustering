@@ -1,0 +1,35 @@
+# config.yaml — All project parameters in one place
+
+data:
+  raw_expression: "data/raw/melanoma_expression.csv"
+  raw_metadata: "data/raw/melanoma_metadata.csv"
+  processed_expression: "data/processed/expression_clean.csv"
+  processed_metadata: "data/processed/metadata_clean.csv"
+
+preprocessing:
+  variance_percentile: 20      # Remove bottom 20% low-variance genes
+  log_transform: true          # Apply log1p transformation
+  scale: true                  # Standardize to mean=0, std=1
+  max_genes: 5000              # Keep top 5000 most variable genes
+
+pca:
+  n_components: 50             # Reduce to 50 principal components
+  random_state: 42
+
+umap:
+  n_components: 2              # Final 2D visualization
+  n_neighbors: 15
+  min_dist: 0.1
+  random_state: 42
+
+clustering:
+  k_range_min: 2
+  k_range_max: 9
+  n_init: 10                   # K-Means initialization attempts
+  random_state: 42
+
+models:
+  save_dir: "models/"
+
+results:
+  save_dir: "results/"

@@ -1,0 +1,66 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+conda-meta/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+*.env
+
+# Build / cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Large project artifacts
+data/raw/
+data/processed/
+
+models/
+
+
+# Keep only selected preview assets if you create a separate folder
+!assets/
+!assets/**
+
+# If you want to keep a few selected result images inside results instead,
+# then ignore everything in results and re-include only chosen files:
+results/*
+!results/04_pca_variance.png
+!results/05_umap_basic.png
+!results/06_k_selection.png
+!results/07_kmeans_clusters.png
+!results/10_top_genes.png
+!results/11_confusion_matrix.png
+
+# Model / numeric artifacts
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Large tabular outputs
+results/*.csv
+results/*.txt
+data/**/*.csv
+data/**/*.txt
+data/**/*.xlsx
+data/**/*.xls
