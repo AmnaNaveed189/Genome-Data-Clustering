@@ -111,7 +111,8 @@ def handle_missing_values(expr):
     missing = expr.isnull().sum().sum()
     if missing > 0:
         print(f"Filling {missing} missing values with gene means...")
-        expr = expr.fillna(expr.mean(axis=1).values.reshape(-1, 1))
+        # expr is cells x genes at call site, so column means = gene means.
+        expr = expr.fillna(expr.mean(axis=0))
     else:
         print("No missing values found ✓")
     return expr
